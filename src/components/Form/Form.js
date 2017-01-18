@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import Select from 'react-select';
+import { map } from '../../utils/lodash';
 import countryList from '../../fixtures/countries';
 import sourceList from '../../fixtures/sources';
 import './Form.scss';
@@ -19,6 +20,10 @@ TextField.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
+const onSelectFn = (onChange) => ({
+  false: (value) => onChange(value['value']),
+  true:  (values) => onChange(map(values, 'value')),
+});
 const SelectField = ({ description, input, label = 'Untitled', name, options, multi = false }) => (
   <div className="explorer__form__group">
     <label htmlFor={name}>{label}</label>
@@ -29,6 +34,7 @@ const SelectField = ({ description, input, label = 'Untitled', name, options, mu
         options={options}
         multi={multi} autoBlur
         onBlur={() => input.onBlur(input.value)}
+        onChange={onSelectFn(input.onChange)[multi]}
       />
     </div>
   </div>

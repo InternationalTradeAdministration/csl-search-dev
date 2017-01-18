@@ -25,7 +25,7 @@ class App extends Component {
     const params = reduce(omitBy(form, isEmpty), (result, value, _key) => {
       const key = snakeCase(_key);
       return Object.assign(
-        result, { [key]: Array.isArray(value) ? map(value, 'value').join(',') : value });
+        result, { [key]: Array.isArray(value) ? value.join(',') : value });
     }, {});
     this.props.dispatch(fetchResultsIfNeeded(params));
     this.push(params);
