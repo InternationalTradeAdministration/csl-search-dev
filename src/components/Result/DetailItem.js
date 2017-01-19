@@ -3,6 +3,8 @@ import React, { PropTypes } from 'react';
 
 const isValidArray = (value) => (value && Array.isArray(value) && value.length);
 const isValidChildren = (value) => {
+  if (typeof value === 'number' || typeof value === 'boolean') return true;
+
   if (isEmpty(value)) return false;
 
   if (typeof value.type === 'function' && isEmpty(get(value, ['props', 'value']))) return false;

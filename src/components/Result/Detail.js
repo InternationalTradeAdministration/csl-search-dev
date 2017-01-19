@@ -22,6 +22,7 @@ const Detail = ({ result }) => (
       <Row label="Vessel Flag">{result.vessel_flag}</Row>
       <Row label="Vessel Owner">{result.vessel_owner}</Row>
       <Row label="Remarks">{result.remarks}</Row>
+      <Row label="Score">{result.score}</Row>
       <Row label="Source List URL">
         <Link value={result.source_list_url} />
       </Row>
