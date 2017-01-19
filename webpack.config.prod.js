@@ -30,7 +30,7 @@ module.exports = {
       __DEVELOPMENT__: false,
     }),
     new ExtractTextPlugin('explorer.css'),
-    new HtmlWebpackPlugin({ template: path.join(__dirname, 'index.html') }),
+    new HtmlWebpackPlugin({ template: path.join(__dirname, 'index.html'), hash: true }),
   ],
   module: {
     loaders: [

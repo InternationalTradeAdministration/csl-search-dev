@@ -26,7 +26,7 @@ export function receiveFailure(error) {
 const { host, apiKey } = config.api.csl;
 function fetchResults(querystring) {
   return (dispatch) => {
-    dispatch(requestResults(querystring));
+    dispatch(requestResults());
     return fetch(`${host}?api_key=${apiKey}&${querystring}`)
       .then(response => response.json())
       .then(json => dispatch(receiveResults(json)));
