@@ -57,6 +57,7 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "es6-promise": "^3.2.1",
     "history": "^3.0.0",
     "invariant": "^2.2.1",
