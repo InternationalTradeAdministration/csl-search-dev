@@ -1,23 +1,25 @@
+import cx from 'classnames';
 import React, { PropTypes } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import Select from 'react-select';
-import { map } from '../../utils/lodash';
+import { isEmpty, map, trim } from '../../utils/lodash';
 import countryList from '../../fixtures/countries';
 import sourceList from '../../fixtures/sources';
 import './Form.scss';
 
-const TextField = ({ description, input, label, name }) => (
-  <div className="explorer__form__group">
-    <label htmlFor={name}>{label}</label>
+const TextField = ({ description, input, label, meta: { error } }) => (
+  <div className={cx('explorer__form__group', { 'explorer__form__group--error': !!error })}>
+    <label htmlFor={input.name}>{label}</label>
     {description ? <p>{description}</p> : null}
-    <input type="text" className="explorer__form__input" id={name} {...input} />
+    <input type="text" className="explorer__form__input" id={input.name} {...input} />
+    {(error && <span className="explorer__form__message">{error}</span>)}
   </div>
 );
 TextField.propTypes = {
   description: PropTypes.string,
   input: PropTypes.object.isRequired,
   label: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  meta: PropTypes.object,
 };
 
 const onSelectFn = (onChange) => ({
@@ -49,7 +51,7 @@ SelectField.propTypes = {
 };
 
 const Form = ({
-  handleSubmit,
+  error, handleSubmit,
 }) => (
   <form className="explorer__form" onSubmit={handleSubmit}>
     <fieldset>
@@ -79,7 +81,7 @@ const Form = ({
         description="Choose which countries that you want to search. Note, the Nonproliferation Sanctions and ITAR Debarred lists do not include the country with an entity. If you choose to search for entities by country then you will not be searching these two lists."
       />
       <div className="explorer__form__group">
-        <button className="explorer__form__submit pure-button pure-button-primary" onClick={handleSubmit}>
+        <button className="explorer__form__submit pure-button pure-button-primary" onClick={handleSubmit} disabled={!!error}>
           <i className="fa fa-paper-plane" /> Search
         </button>
       </div>
@@ -89,6 +91,17 @@ const Form = ({
 Form.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
+
+function validate(values) {
+  const errors = {};
+  if (values.fuzzyName === 'true' && isEmpty(trim(values.name))) {
+    errors.name = 'Name is required.';
+    errors._error = true;
+  }
+  return errors;
+}
+
 export default reduxForm({
   form: 'form',
+  validate,
 })(Form);
