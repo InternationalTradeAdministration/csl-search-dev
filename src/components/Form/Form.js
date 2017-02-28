@@ -51,7 +51,7 @@ SelectField.propTypes = {
 };
 
 const Form = ({
-  handleSubmit,
+  error, handleSubmit,
 }) => (
   <form className="explorer__form" onSubmit={handleSubmit}>
     <fieldset>
@@ -81,7 +81,7 @@ const Form = ({
         description="Choose which countries that you want to search. Note, the Nonproliferation Sanctions and ITAR Debarred lists do not include the country with an entity. If you choose to search for entities by country then you will not be searching these two lists."
       />
       <div className="explorer__form__group">
-        <button className="explorer__form__submit pure-button pure-button-primary" onClick={handleSubmit}>
+        <button className="explorer__form__submit pure-button pure-button-primary" onClick={handleSubmit} disabled={!!error}>
           <i className="fa fa-paper-plane" /> Search
         </button>
       </div>
@@ -96,6 +96,7 @@ function validate(values) {
   const errors = {};
   if (values.fuzzyName === 'true' && isEmpty(trim(values.name))) {
     errors.name = 'Name is required.';
+    errors._error = true;
   }
   return errors;
 }
