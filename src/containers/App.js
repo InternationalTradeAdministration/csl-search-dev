@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { camelCase, isEmpty, map, omitBy, reduce, snakeCase } from '../utils/lodash';
 import { stringify } from 'querystring';
+import { assign, camelCase, isEmpty, omitBy, reduce, snakeCase } from '../utils/lodash';
 import { Form, Result, Spinner } from '../components';
 import { fetchResultsIfNeeded } from '../actions';
 import './App.scss';
@@ -17,14 +17,14 @@ class App extends Component {
 
     const { dispatch, query } = this.props;
     const offset = (parseInt(e.target.dataset.page, 10) - 1) * 10;
-    const params = Object.assign({}, omitBy(query, isEmpty), { offset });
+    const params = assign({}, omitBy(query, isEmpty), { offset });
     dispatch(fetchResultsIfNeeded(params));
     this.push(params);
   }
   handleSubmit = (form) => {
     const params = reduce(omitBy(form, isEmpty), (result, value, _key) => {
       const key = snakeCase(_key);
-      return Object.assign(
+      return assign(
         result, { [key]: Array.isArray(value) ? value.join(',') : value });
     }, {});
     this.props.dispatch(fetchResultsIfNeeded(params));
@@ -37,7 +37,7 @@ class App extends Component {
     const { query, results } = this.props;
     const formValues = reduce(
       query,
-      (result, value, key) => Object.assign(result, { [camelCase(key)]: value }),
+      (result, value, key) => assign(result, { [camelCase(key)]: value }),
       {});
     return (
       <div className="explorer">

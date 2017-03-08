@@ -1,4 +1,6 @@
-const config = Object.assign({
+import { assign } from './utils/lodash';
+
+const config = assign({
   development: {
     api: {
       csl: {
