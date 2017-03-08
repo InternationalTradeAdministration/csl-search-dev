@@ -1,3 +1,4 @@
+export assign from 'lodash/assign';
 export camelCase from 'lodash/camelCase';
 export compact from 'lodash/compact';
 export get from 'lodash/get';

@@ -10,6 +10,8 @@ function renderToElement(elementId) {
   const store = configureStore();
   const history = useQueries(createHistory)();
 
+  require('es6-promise').polyfill();
+
   render(
     <Provider store={store} key="provider">
       <App history={history} />
