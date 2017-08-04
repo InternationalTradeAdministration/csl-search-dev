@@ -74,7 +74,7 @@ const Form = ({
       />
       <Field
         component={SelectField} name="sources" label="Sources" options={sourceList} multi
-        description="Choose which of the eleven screening lists that you want to search."
+        description="Choose which of the screening lists that you want to search."
       />
       <Field
         component={SelectField} name="countries" label="Countries" options={countryList} multi
