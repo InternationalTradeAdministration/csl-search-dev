@@ -1,7 +1,8 @@
 export default [
+  { value: '13599', label: 'Blocked Solely Pursuant to Executive Order 13599 (13599) - Treasury Department' },
+  { value: 'CAP', label: 'Correspondent Account or Payable-Through Account Sanctions (CAPTA)' },
   { value: 'DPL', label: 'Denied Persons List (DPL) - Bureau of Industry and Security' },
   { value: 'EL', label: 'Entity List (EL) - Bureau of Industry and Security' },
-  { value: '13599', label: 'Blocked Solely Pursuant to Executive Order 13599 (13599) - Treasury Department' },
   { value: 'FSE', label: 'Foreign Sanctions Evaders (FSE) - Treasury Department' },
   { value: 'DTC', label: 'ITAR Debarred (DTC) - State Department' },
   { value: 'ISN', label: 'Nonproliferation Sanctions (ISN) - State Department' },
