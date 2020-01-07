@@ -4,16 +4,16 @@ const config = assign({
   development: {
     api: {
       csl: {
-        host: 'https://api.govwizely.com/consolidated_screening_list/search',
-        apiKey: 'Z48wSr3E3nNN4itDUvE4Clje',
+        host: 'https://api.trade.gov/gateway/v1/consolidated_screening_list/search',
+        accessToken: 'b19262a5-9372-3204-8289-268d082428af',
       },
     },
   },
   production: {
     api: {
       csl: {
-        host: 'https://api.trade.gov/consolidated_screening_list/search',
-        apiKey: 'hQ4L7ylI9POH3QuqxOY_l2UC',
+        host: 'https://api.trade.gov/gateway/v1/consolidated_screening_list/search',
+        accessToken: 'b19262a5-9372-3204-8289-268d082428af',
       },
     },
   },
