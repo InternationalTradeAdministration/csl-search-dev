@@ -66,7 +66,10 @@ const Form = ({
       <Field
         component={SelectField} name="fuzzyName" label="Fuzzy Name"
         options={[{ label: 'Off', value: '' }, { label: 'On', value: 'true' }]}
-        description="When set to off, the spelling of the Name you search for must be correct to get results. When set to on, the spelling for the Name you search for may be slightly off. Check the score for each result to determine how close a match it is to the entity's name or its alternative names. A score of 100 is an exact match. Results are returned with the highest scores first."
+        description={<div>
+          <p>When set to off, the spelling of the Name you search for must be correct to get results. When set to on, the spelling for the Name you search for may be slightly off. Check the score for each result to determine how close a match it is to the entity's name or its alternative names. A score of 100 is an exact match. Results are returned with the highest scores first.</p>
+          <p>Fuzzy search filters out the following common words: co, company, corp, corporation, inc, incorporated, limited, ltd, mrs, ms, mr, organization, sa, sas, llc, university, and univ.  For example, 'Water Corporation' returns the same results as 'Water' because 'Corporation' is one of the common words.</p>
+        </div>}
       />
       <Field
         component={TextField} name="address" label="Address"
