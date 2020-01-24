@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { stringify } from 'querystring';
+import { stringify, parse } from 'querystring';
 import { assign, camelCase, isEmpty, omitBy, reduce, snakeCase } from '../utils/lodash';
 import { Form, Result, Spinner } from '../components';
 import { fetchResultsIfNeeded } from '../actions';
@@ -61,7 +61,7 @@ App.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  const query = ownProps.history.getCurrentLocation().query;
+  const query = parse(ownProps.history.location.search.substring(1));
   const { results } = state;
   return {
     query,

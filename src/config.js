@@ -5,7 +5,7 @@ const config = assign({
     api: {
       csl: {
         host: 'https://api.trade.gov/gateway/v1/consolidated_screening_list/search',
-        accessToken: 'b19262a5-9372-3204-8289-268d082428af',
+        accessToken: 'b0045391-2ef8-3049-a215-f78b7716f045',
       },
     },
   },
@@ -13,7 +13,7 @@ const config = assign({
     api: {
       csl: {
         host: 'https://api.trade.gov/gateway/v1/consolidated_screening_list/search',
-        accessToken: 'b19262a5-9372-3204-8289-268d082428af',
+        accessToken: 'b0045391-2ef8-3049-a215-f78b7716f045',
       },
     },
   },
