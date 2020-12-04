@@ -5,6 +5,7 @@ A search client for Consolidated Screening List.
 
 ### Setup
 
+Current build uses node v6.17.1
 ```
 npm install
 npm start
@@ -33,7 +34,7 @@ Include the build output (e.g. `bundle.js` and `explorer.css`) within the `head`
   <head>
     ...
     <script src="bundle.js"></script> <!-- CSL Search js -->
-    <link href="explorer.css"></script> <!-- CSL Search styles -->
+    <link href="explorer.css"> <!-- CSL Search styles -->
     ...
   </head>
   <body>
