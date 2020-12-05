@@ -4,6 +4,7 @@ import { stringify, parse } from 'querystring';
 import { assign, camelCase, isEmpty, omitBy, reduce, snakeCase } from '../utils/lodash';
 import { Form, Result, Spinner } from '../components';
 import { fetchResultsIfNeeded } from '../actions';
+import a11yFixes from '../utils/a11yFixes';
 import './App.scss';
 
 class App extends Component {
@@ -39,17 +40,15 @@ class App extends Component {
       query,
       (result, value, key) => assign(result, { [camelCase(key)]: value }),
       {});
-    return (
-      <div className="explorer">
-        <h1 className="Header-1"><b>Search the Consolidated Screening List</b></h1>
-        <p className="DefaultParagraph-1">Search <a href="https://www.trade.gov/consolidated-screening-list">the screening lists</a> at one time by filling in the search boxes below.  If you get too many results, try including more information to the additional fields.  If you get too few results, try searching one field at a time.</p>
+    a11yFixes();
 
-        <div className="explorer__content">
-          <Form onSubmit={this.handleSubmit} initialValues={formValues} />
-          <Spinner active={results.isFetching} />
-          <Result results={results} onPaging={this.handlePaging} query={query} />
-        </div>
-      </div>
+    return (
+      <main className="explorer__content">
+        <h1 id="Header-1">Search the Consolidated Screening List</h1>
+        <Form onSubmit={this.handleSubmit} initialValues={formValues} />
+        <Spinner active={results.isFetching} />
+        <Result results={results} onPaging={this.handlePaging} query={query} />
+      </main>
     );
   }
 }
