@@ -6,6 +6,7 @@ export default [
   { value: 'DTC', label: 'ITAR Debarred (DTC) - State Department' },
   { value: 'MEU', label: 'Military End-User (MEU) - Bureau of Industry and Security'},
   { value: 'ISN', label: 'Nonproliferation Sanctions (ISN) - State Department' },
+  { value: 'MBS', label: 'Non-SDN Menu-Based Sanctions List (MBS) - Treasury Department' },
   { value: 'PLC', label: 'Palestinian Legislative Council List (PLC) - Treasury Department' },
   { value: 'SSI', label: 'Sectoral Sanctions Identifications List (SSI) - Treasury Department' },
   { value: 'SDN', label: 'Specially Designated Nationals (SDN) - Treasury Department' },
