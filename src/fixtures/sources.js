@@ -1,5 +1,6 @@
 export default [
   { value: 'CAP', label: 'Correspondent Account or Payable-Through Account Sanctions (CAPTA)' },
+  { value: 'CCMC', label: 'Non-SDN Communist Military Companies Sanctions List (CCMC) - Treasury Department' },
   { value: 'DPL', label: 'Denied Persons List (DPL) - Bureau of Industry and Security' },
   { value: 'EL', label: 'Entity List (EL) - Bureau of Industry and Security' },
   { value: 'FSE', label: 'Foreign Sanctions Evaders (FSE) - Treasury Department' },
