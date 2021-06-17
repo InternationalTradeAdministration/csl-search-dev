@@ -5,12 +5,12 @@ A search client for Consolidated Screening List.
 
 ### Setup
 
-Current build uses node v6.17.1
+With Node.js installed, run:
 ```
 npm install
-npm start
-open http://localhost:3000
+npm run start
 ```
+and open http://localhost:3000
 
 ### Linting
 
