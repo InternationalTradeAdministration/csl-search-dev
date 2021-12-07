@@ -23,12 +23,12 @@ export function receiveFailure(error) {
   };
 }
 
-const { host, accessToken } = config.api.csl;
+const { host, subscriptionKey } = config.api.csl;
 function fetchResults(querystring) {
   return (dispatch) => {
     dispatch(requestResults());
     return fetch(`${host}?${querystring}`, {
-      headers: { 'Authorization': 'Bearer ' + accessToken }
+      headers: { 'subscription-key': subscriptionKey }
     })
       .then(response => response.json())
       .then(json => dispatch(receiveResults(json)));

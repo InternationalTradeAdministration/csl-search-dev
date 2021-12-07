@@ -72,7 +72,7 @@ const Form = ({
         </div>}
       />
       <Field
-        component={TextField} name="address" label="Address"
+        component={TextField} name="full_address" label="Address"
         description={<p>Search for the street address, city, province, and postal code of an entity.</p>}
       />
       <Field
