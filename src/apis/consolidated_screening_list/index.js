@@ -1,1 +1,1 @@
-export const fields = ['q', 'name', 'fuzzyName', 'address', 'sources', 'countries'];
+export const fields = ['q', 'name', 'fuzzyName', 'full_address', 'sources', 'countries'];
