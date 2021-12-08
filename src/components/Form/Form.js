@@ -56,10 +56,6 @@ const Form = ({
         <p className="DefaultParagraph-1">Search all <a href="https://www.trade.gov/consolidated-screening-list" target="_parent">the screening lists</a> at one time by filling in the search boxes below.  <br/> If you get too many results, try including more information to the additional fields.  If you get too few results, try searching one field at a time.</p>
       </legend>
       <Field
-        component={TextField} name="q" label="Keyword"
-        description={<p>Search for words in the name, alternative names (aliases), title of the entity, and additional remarks regarding the entity.</p>}
-      />
-      <Field
         component={TextField} name="name" label="Name"
         description={<p>Search for an entity&#39;s name or one of its alternative names.</p>}
       />
