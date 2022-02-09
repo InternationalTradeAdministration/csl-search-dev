@@ -115,6 +115,7 @@ export default [
   { label: 'Kiribati', value: 'KI' },
   { label: 'Korea, North', value: 'KP' },
   { label: 'Korea, South', value: 'KR' },
+  { label: 'Kosovo', value: 'XK' },
   { label: 'Kuwait', value: 'KW' },
   { label: 'Kyrgyzstan', value: 'KG' },
   { label: 'Laos', value: 'LA' },
