@@ -28,7 +28,10 @@ function fetchResults(querystring) {
   return (dispatch) => {
     dispatch(requestResults());
     return fetch(`${host}?${querystring}`, {
-      headers: { 'subscription-key': subscriptionKey }
+      headers: {
+        'subscription-key': subscriptionKey,
+        'Cache-Control': 'no-store',
+      },
     })
       .then(response => response.json())
       .then(json => dispatch(receiveResults(json)));
