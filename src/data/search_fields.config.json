@@ -1,0 +1,20 @@
+{
+  "nameField": {
+    "id": "name",
+    "name": "name",
+    "displayName": "Name",
+    "hint": "Search for an entity's name or one of its alternative names."
+  },
+  "fuzzyNameField": {
+    "id": "fuzzy_name",
+    "name": "fuzzy_name",
+    "displayName": "Fuzzy Name",
+    "hint": "<div>\n<p>When set to \"off\", the spelling of the Name you search for must be correct to get results. When set to \"on\", the spelling for the Name you search for may be slightly off from the exact spelling. Check the score for each result to determine how close a match it is to the entity's name or its alternative names. A score of 100 is an exact match. Results are returned with the highest scores first.</p>\n<p>Fuzzy search filters out the following common words: co, company, corp, corporation, inc, incorporated, limited, ltd, mrs, ms, mr, organization, sa, sas, llc, university, and univ.  <br/> For example, 'Water Corporation' returns the same results as 'Water' because 'Corporation' is one of the common words.</p>\n</div>"
+  },
+  "addressField": {
+    "id": "full_address",
+    "name": "full_address",
+    "displayName": "Address",
+    "hint": "Search for the street address, city, province, and postal code of an entity."
+  }
+}
