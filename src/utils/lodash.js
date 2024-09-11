@@ -1,11 +1,11 @@
-export assign from 'lodash/assign';
-export camelCase from 'lodash/camelCase';
-export compact from 'lodash/compact';
-export get from 'lodash/get';
-export isEmpty from 'lodash/isEmpty';
-export map from 'lodash/map';
-export omit from 'lodash/omit';
-export omitBy from 'lodash/omitBy';
-export reduce from 'lodash/reduce';
-export snakeCase from 'lodash/snakeCase';
-export trim from 'lodash/trim';
+export { default as assign } from 'lodash/assign';
+export { default as camelCase } from 'lodash/camelCase';
+export { default as compact } from 'lodash/compact';
+export { default as get } from 'lodash/get';
+export { default as isEmpty } from 'lodash/isEmpty'
+export { default as map } from 'lodash/map';
+export { default as omit } from 'lodash/omit';
+export { default as omitBy } from 'lodash/omitBy';
+export { default as reduce }  from 'lodash/reduce';
+export { default as snakeCase } from 'lodash/snakeCase';
+export { default as trim } from 'lodash/trim';

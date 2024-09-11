@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types'
 import { isEmpty, map, omit } from '../../utils/lodash';
-import React, { PropTypes } from 'react';
-import Item from './Item';
-import Pages from './Pages';
+import Item from './Item.jsx';
+import Pages from './Pages.jsx';
 import './Result.scss';
 
 const Label = ({ count, query }) => {
